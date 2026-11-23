@@ -277,6 +277,8 @@ def ensure_sources(state: dict[str, Any], path: Path, directory: Path,
         cli(["source", "wait", ids[name], "-n", notebook_id,
              "--timeout", str(source_timeout), "--json"], timeout=source_timeout + 30)
         source = cli(["source", "get", ids[name], "-n", notebook_id, "--json"])
+        if isinstance(source, dict) and isinstance(source.get("source"), dict):
+            source = source["source"]
         if not isinstance(source, dict) or source.get("status") != "ready":
             raise RadioError(f"Source {name} is not confirmed ready")
     selected = [ids[name] for name in SOURCE_NAMES]
@@ -313,6 +315,8 @@ def ensure_artifact(state: dict[str, Any], path: Path, config: dict[str, Any],
     cli(["artifact", "wait", artifact_id, "-n", notebook_id,
          "--timeout", str(audio_timeout), "--json"], timeout=audio_timeout + 30)
     artifact = cli(["artifact", "get", artifact_id, "-n", notebook_id, "--json"])
+    if isinstance(artifact, dict) and isinstance(artifact.get("artifact"), dict):
+        artifact = artifact["artifact"]
     if not isinstance(artifact, dict) or artifact.get("status") not in ("completed", "complete", "ready"):
         raise RadioError("Audio artifact is not confirmed complete")
     return artifact_id
