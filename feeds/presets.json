@@ -1,0 +1,81 @@
+{
+  "_note": "온보딩에서 고른 정보 유형별로 검증된 피드 묶음. 주소는 그날 기사를 검색하는 주소라 매일 새 기사가 들어온다. 2026-11-23 검증. 보유 종목 피드는 holding_feed_template으로 사람마다 만든다.",
+  "verified_on": "2026-11-23",
+  "presets": {
+    "domestic_market": {
+      "label": "국내 시황",
+      "feeds": [
+        {
+          "name": "코스피 시황",
+          "url": "https://news.google.com/rss/search?q=%EC%BD%94%EC%8A%A4%ED%94%BC+%EC%8B%9C%ED%99%A9+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        },
+        {
+          "name": "코스닥 시황",
+          "url": "https://news.google.com/rss/search?q=%EC%BD%94%EC%8A%A4%EB%8B%A5+%EC%8B%9C%ED%99%A9+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        }
+      ]
+    },
+    "global_market": {
+      "label": "미국·글로벌 시황",
+      "feeds": [
+        {
+          "name": "미국 증시 마감",
+          "url": "https://news.google.com/rss/search?q=%EB%89%B4%EC%9A%95%EC%A6%9D%EC%8B%9C+%EB%A7%88%EA%B0%90+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        },
+        {
+          "name": "US stock market today",
+          "url": "https://news.google.com/rss/search?q=stock+market+today+when:1d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ]
+    },
+    "macro_rates_fx": {
+      "label": "경제 뉴스·금리·환율",
+      "feeds": [
+        {
+          "name": "원달러 환율·기준금리",
+          "url": "https://news.google.com/rss/search?q=%EC%9B%90%EB%8B%AC%EB%9F%AC+%ED%99%98%EC%9C%A8+%EA%B8%B0%EC%A4%80%EA%B8%88%EB%A6%AC+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        },
+        {
+          "name": "Fed rates",
+          "url": "https://news.google.com/rss/search?q=Fed+rates+when:1d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ]
+    },
+    "ipo": {
+      "label": "신규 상장 일정",
+      "feeds": [
+        {
+          "name": "공모주 청약·상장 일정",
+          "url": "https://news.google.com/rss/search?q=%EA%B3%B5%EB%AA%A8%EC%A3%BC+%EC%B2%AD%EC%95%BD+%EC%83%81%EC%9E%A5+%EC%9D%BC%EC%A0%95+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        },
+        {
+          "name": "US IPO",
+          "url": "https://news.google.com/rss/search?q=IPO+this+week+when:1d&hl=en-US&gl=US&ceid=US:en"
+        }
+      ]
+    },
+    "sector_theme": {
+      "label": "섹터·테마 동향",
+      "feeds": [
+        {
+          "name": "반도체 업종",
+          "url": "https://news.google.com/rss/search?q=%EB%B0%98%EB%8F%84%EC%B2%B4+%EC%97%85%EC%A2%85+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        },
+        {
+          "name": "2차전지 업종",
+          "url": "https://news.google.com/rss/search?q=2%EC%B0%A8%EC%A0%84%EC%A7%80+%EC%97%85%EC%A2%85+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        },
+        {
+          "name": "AI 테마주",
+          "url": "https://news.google.com/rss/search?q=AI+%EA%B4%80%EB%A0%A8%EC%A3%BC+when:1d&hl=ko&gl=KR&ceid=KR:ko"
+        }
+      ]
+    }
+  },
+  "holding_feed_template": {
+    "ko": "https://news.google.com/rss/search?q={종목명 또는 추종지수}+when:1d&hl=ko&gl=KR&ceid=KR:ko",
+    "en": "https://news.google.com/rss/search?q={TICKER}+stock+when:1d&hl=en-US&gl=US&ceid=US:en",
+    "tip": "ETF는 상품명보다 추종 지수(예: 나스닥100, S&P500, 코스피200)로 검색해야 기사가 잘 잡힌다. Yahoo Finance 종목 RSS는 주제가 자주 벗어나 기본값에서 뺐다."
+  },
+  "fetch_tips": "Google 뉴스 RSS는 연속 호출하면 HTTP 429가 날 수 있다. 피드 사이 2~3초 간격을 두고 실패하면 25초 뒤 한 번 재시도한다."
+}
