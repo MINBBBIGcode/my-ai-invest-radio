@@ -1,0 +1,8 @@
+.venv/
+output/
+.radio-state/
+station.json
+holdings.md
+briefing.md
+notebooklm-home/
+__pycache__/

@@ -1,0 +1,13 @@
+{
+  "program_name": "예시 동네 라디오",
+  "language": "ko",
+  "timezone": "Asia/Seoul",
+  "feeds": [],
+  "markdown_files": ["examples/local_story.md"],
+  "context_file": "examples/listener_context.md",
+  "briefing_file": "examples/briefing.md",
+  "max_items": 6,
+  "max_age_days": 7,
+  "audio_instructions": "한국어 진행자 두 명이 짧고 차분한 대화로 설명하세요. Source 1의 자료 제목, 출처, 자료 날짜를 확인하고 근거 범위 안에서만 말하세요. Source 2의 청취자 맥락은 제공된 내용만 사용하세요. Source 3의 질문은 사실이나 결론으로 바꾸지 마세요. 시행 여부나 날짜가 미정이면 미정이라고 말하고, 자료 이후 변화는 확인되지 않았다고 밝히세요. source1, source2 같은 파일명이나 내부 식별자는 소리 내어 읽지 마세요.",
+  "output_dir": "output"
+}
